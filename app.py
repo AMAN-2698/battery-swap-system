@@ -5,15 +5,20 @@ app = Flask(__name__)
 app.secret_key = 'secretkey123'
 
 db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='Aman@2698',
-    database='battery_swap'
+    host='aman2698.mysql.pythonanywhere-services.com',
+    user='aman2698',
+    password='chaus@2698',
+    database='aman2698$default'
 )
 cursor = db.cursor(dictionary=True)
 
 @app.route('/')
-def index():
+def index(): 
+    try:
+        if not db.is_connected():
+            db.reconnect()
+    except:
+        pass
     return render_template('index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
