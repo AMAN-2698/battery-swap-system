@@ -1,7 +1,7 @@
 # Battery Swap Appointment Booking System
 
-** Live Website:** [Visit Now](https://aman2698.pythonanywhere.com/)  
-** GitHub Repository:** [View Code](https://github.com/AMAN-2698/battery-swap-system)
+Live Website: [Visit Now](https://aman2698.pythonanywhere.com/)  
+GitHub Repository: [View Code](https://github.com/AMAN-2698/battery-swap-system)
 
 ---
 
