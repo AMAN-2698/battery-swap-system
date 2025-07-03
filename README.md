@@ -13,7 +13,6 @@ This is a full-stack web application built for booking battery swap appointments
 
 ## Admin Login Credentials
 
-### **Admin Login**
 - **Username:** `Admin`  
 - **Password:** `Admin_1234`
 
