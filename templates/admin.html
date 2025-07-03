@@ -1,0 +1,37 @@
+{% include 'partials/header.html' %}
+<h2>Admin Panel - Manage Bookings</h2>
+<a class="btn" href="/logout">Logout</a>
+<input type="text" id="search" placeholder="Search bookings..." 
+       style="margin: 20px 0; padding: 10px; width: 300px; border-radius: 5px;">
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Station</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  {% for b in bookings %}
+  <tr>
+    <td>{{ b.username }}</td>
+    <td>{{ b.station }}</td>
+    <td>{{ b.date }}</td>
+    <td>{{ b.status }}</td>
+    <td>
+      {% if b.status != 'Approved' %}
+      <form action="/approve-booking/{{ b.id }}" method="POST" style="display:inline;">
+        <button type="submit" class="btn" style="background-color: green;">Approve</button>
+      </form>
+      {% endif %}
+      <form action="/delete-booking/{{ b.id }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure to delete?')">
+        <button type="submit" class="btn" style="background-color: red;">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</table>
+
+{% include 'partials/footer.html' %}
+
